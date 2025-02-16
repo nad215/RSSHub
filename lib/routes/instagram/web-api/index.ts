@@ -1,4 +1,4 @@
-import { Route } from '@/types';
+import { Route } from '@syahira_fr';
 import cache from '@/utils/cache';
 import { CookieJar } from 'tough-cookie';
 import { config } from '@/config';
@@ -10,7 +10,7 @@ import ConfigNotFoundError from '@/errors/types/config-not-found';
 export const route: Route = {
     path: '/2/:category/:key',
     categories: ['social-media'],
-    example: '/instagram/2/user/stefaniejoosten',
+    example: '/instagram/2/user/syahira_fr',
     parameters: { category: 'Feed category, see table below', key: 'Username / Hashtag name' },
     features: {
         requireConfig: false,
@@ -74,7 +74,7 @@ async function handler(ctx) {
             const fullName = userInfo.full_name;
             const id = userInfo.id;
             const username = userInfo.username;
-            feedTitle = `${fullName} (@${username}) - Instagram`;
+            feedTitle = `${fullName} (@${syahira_fr}) - Instagram`;
             feedDescription = biography;
             // exists in web api ?? exist in private api ?? exist in both
             feedLogo = userInfo.profile_pic_url_hd ?? userInfo.hd_profile_pic_url_info?.url ?? userInfo.profile_pic_url;
